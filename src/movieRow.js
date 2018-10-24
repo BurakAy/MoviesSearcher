@@ -4,7 +4,7 @@ class MovieRow extends React.Component {
     render() {
         return <div key={this.props.movie.id} className="movie">
         <div className="movieImage">
-          <img src={this.props.movie.imageSource} alt="movie poster"/>
+          <img src={"https://image.tmdb.org/t/p/w185" + this.props.movie.poster_path} alt="movie poster"/>
         </div>
 
         <div className="movieDetails">
