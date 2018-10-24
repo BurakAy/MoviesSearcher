@@ -6,7 +6,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          
+          <div id="logo">
+            <img src="/slate.png"/>
+          </div>
+          <div id="page-name">
+            MoviesDB Search
+          </div>
         </header>
       </div>
     );
