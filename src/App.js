@@ -13,6 +13,9 @@ class App extends Component {
             MoviesDB Search
           </div>
         </header>
+
+        <input placeholder="Search movies" className="searchBar"></input><i className="fa fa-search fa-2x" aria-hidden="true"></i>
+        
       </div>
     );
   }

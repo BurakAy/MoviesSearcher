@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   background-color: #282c34;
 }
 
@@ -27,4 +27,25 @@
 
 #page-name {
   font-weight: bold;
+}
+
+.searchBar {
+  height: 35px;
+  width: 65%;
+  margin: 20px 0 20px 20px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 18px;
+}
+
+.fa-search {
+  background-color: #ffffff;
+  color: #333333;
+  height: 35px;
+  vertical-align: middle;
+  margin-top: -2.3px;
+  padding: 0 5px;
+  border-radius: 0 5px 5px 0;
 }
