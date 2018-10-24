@@ -7,7 +7,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div id="logo">
-            <img src="/slate.png"/>
+            <img src="/slate.png" alt="logo"/>
           </div>
           <div id="page-name">
             MoviesDB Search
