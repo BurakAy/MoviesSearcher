@@ -1,6 +1,5 @@
 .App {
   /* text-align: center; */
-  background-color: #282c34;
 }
 
 .App-header {
@@ -29,6 +28,11 @@
   font-weight: bold;
 }
 
+.searchArea {
+  background-color: #282c34;
+  margin-bottom: 20px;
+}
+
 .searchBar {
   height: 35px;
   width: 65%;
@@ -48,4 +52,55 @@
   margin-top: -2.3px;
   padding: 0 5px;
   border-radius: 0 5px 5px 0;
+}
+
+.movie {
+  margin: 20px 0 40px;
+  display: flex;
+  width: 55%;
+}
+
+.movieImage img {
+  width: 125px;
+  margin: 10px 20px;
+}
+
+.movieTitle {
+  margin: 5px 0 10px 0;
+}
+
+.movieOverview {
+  margin-top: 5px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.buttonGroup {
+  text-align: center;
+}
+
+.playButton, .viewButton {
+  height: 35px;
+  width: 60px;
+  border-radius: 50px;
+  border: none;
+  margin: 0 20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.playButton:hover {
+  cursor: pointer;
+}
+
+.viewButton:hover {
+  cursor: pointer;
+}
+
+.playButton {
+  background-color: #2EAE55;
+}
+
+.viewButton {
+  background-color: #282c34;
 }
