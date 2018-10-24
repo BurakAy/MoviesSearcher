@@ -7,37 +7,22 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {}
-    // const movies = [
-    //   {id: 0, title: "Avengers: Infinity War", overview: "Nulla odio purus, dapibus fermentum vehicula non, vulputate eu lacus. Vestibulum a tellus mattis, semper quam quis, scelerisque mauris. Curabitur nunc quam, venenatis id varius ut, sodales et libero. Suspendisse et suscipit dolor. Cras vel molestie eros, nec bibendum odio. Maecenas vitae iaculis eros. Vivamus egestas efficitur iaculis. Suspendisse vel finibus velit.", imageSource: "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wegotthiscovered.com%2Fwp-content%2Fuploads%2F2017%2F12%2F15028202134642-5.jpeg&f=1"},
-    //   {id: 1, title: "Cinderella Man", overview: "Donec lectus massa, vestibulum ac varius eu, sagittis quis leo. Nulla vel leo luctus, finibus velit sed, dictum libero. Cras eget ultricies massa. Sed euismod sem eget posuere fermentum. Maecenas a pellentesque nunc. Proin vitae nibh nec libero placerat malesuada id nec velit.", imageSource: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F4%2F4f%2FCinderella_Man_poster.jpg&f=1"}
-    // ]
-
-    // var movieRows = []
-
-    // movies.forEach((movie) => {
-    //   const movieRow = <MovieRow movie={movie}/>
-
-    //   movieRows.push(movieRow);
-    // })
-
-    // this.state = {rows:movieRows}
 
     this.performSearch()
   }
 
-  performSearch() {
-    console.log("Search using moviedb")
-    const urlString = "https://api.themoviedb.org/3/search/movie?query=marvel&api_key=1b5adf76a72a13bad99b8fc0c68cb085"
+  performSearch(searchTerm) {
+
+    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=" + searchTerm
     $.ajax({
       url: urlString,
       success: (searchResults) => {
-        console.log("fetched")
         const results = searchResults.results
 
         var movieRows = []
 
         results.forEach((movie) => {
-          const movieRow = <MovieRow movie={movie}/>
+          const movieRow = <MovieRow key={movie.id} movie={movie}/>
 
           movieRows.push(movieRow);
         })
@@ -48,6 +33,12 @@ class App extends Component {
         console.log("error")
       }
     })
+  }
+
+  searchChangeHandler(event) {
+    const boundObject = this
+    const searchTerm = event.target.value
+    boundObject.performSearch(searchTerm)
   }
 
   render() {
@@ -63,7 +54,7 @@ class App extends Component {
         </header>
 
         <div className="searchArea">
-        <input placeholder="Search movies" className="searchBar"></input><i className="fa fa-search fa-2x" aria-hidden="true"></i>
+        <input onChange={this.searchChangeHandler.bind(this)} placeholder="Search movies" className="searchBar"></input><i className="fa fa-search fa-2x" aria-hidden="true"></i>
         </div>
 
         {this.state.rows}
