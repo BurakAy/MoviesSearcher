@@ -27,6 +27,7 @@
 .searchArea {
   background-color: #282c34;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .searchBar {
@@ -46,6 +47,7 @@
   height: 35px;
   vertical-align: middle;
   margin-top: -2.3px;
+  margin-right: 20px;
   padding: 0 5px;
   border-radius: 0 5px 5px 0;
 }
@@ -53,7 +55,8 @@
 .movie {
   margin: 20px 0 40px;
   display: flex;
-  width: 55%;
+  width: 60%;
+  min-width: 500px;
 }
 
 .movieImage img {
@@ -71,16 +74,11 @@
   text-align: justify;
 }
 
-.buttonGroup {
-  text-align: center;
-}
-
 .playButton, .viewButton {
   height: 35px;
   width: 60px;
   border-radius: 50px;
   border: none;
-  margin: 0 20px;
   font-size: 16px;
   color: #ffffff;
 }
@@ -95,6 +93,7 @@
 
 .playButton {
   background-color: #2EAE55;
+  margin-right: 40px;
 }
 
 .viewButton {

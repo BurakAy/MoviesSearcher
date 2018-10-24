@@ -54,7 +54,7 @@ class App extends Component {
         </header>
 
         <div className="searchArea">
-        <input onChange={this.searchChangeHandler.bind(this)} placeholder="Search movies" className="searchBar"></input><i className="fa fa-search fa-2x" aria-hidden="true"></i>
+          <input onChange={this.searchChangeHandler.bind(this)} placeholder="Search movies" className="searchBar"></input><i className="fa fa-search fa-2x" aria-hidden="true"></i>
         </div>
 
         {this.state.rows}
